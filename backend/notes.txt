@@ -6,3 +6,25 @@ npm install express
 
 //install mongoose -- it create a abstraction layer to access mongo DB
 npm install mongoose
+
+//connection string of mongo DB local
+mongodb://localhost:27017
+
+//install nodemon as dev dependancy -- D for dev dependacey only use in development
+npm install -D nodemon
+
+//start node project -- use nodemon to keep on watch
+npx nodemon .\index.js
+
+//Capitalize first letter to while creating model in node
+
+use rs to restart the node project
+
+//install express validaor
+npm install --save express-validator
+
+// install bcryptjs
+npm install bcryptjs
+
+// use jwt
+npm install jsonwebtoken 
