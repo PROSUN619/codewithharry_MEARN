@@ -1,0 +1,32 @@
+//install thunder client to test api (extension)
+//install es7 react/redux/graphql (extension)
+//Auto rename tag (extension)
+//Prettier
+
+//install react app globally
+npm install --g create-react-app 
+
+//create react app without install globally
+npx create-react-app my-app
+//use this command to craete react app on root folder
+npx create-react-app .
+//start react app
+npm start
+//build for production
+//npm run build
+
+// to run any js file that are importing use mjs
+node .\src\module1.mjs
+
+//install react router dom 5.2
+npm install react-router-dom@5.2.0
+npm uninstall react-router-dom@5.2.0
+
+//build react application
+npm run build
+
+//create react functional based component
+rafce
+
+//run mutiple node application in the workspace  
+npm run both
