@@ -6,14 +6,8 @@ function About() {
 
   const a = useContext(NoteContext);
 
-  useEffect(() => {
-    a.update();  
-    // eslint-disable-next-line
-  }, [])
-  
-
   return (
-    <div>This is About {a.state.name} He read in class {a.state.class}</div>
+    <div>This is About</div>
   )
 }
 
