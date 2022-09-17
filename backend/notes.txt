@@ -28,3 +28,6 @@ npm install bcryptjs
 
 // use jwt
 npm install jsonwebtoken 
+
+//enable cors
+npm install cors

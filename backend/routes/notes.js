@@ -90,7 +90,7 @@ router.put('/updatenote/:id', fetchUser,
 
 //Route 3 http://localhost:5000/api/notes/updatenote/:id  delete by user
 
-router.put('/deletenote/:id', fetchUser,
+router.delete('/deletenote/:id', fetchUser,
     [
 
     ],

@@ -5,7 +5,7 @@ const NoteItem = (props) => {
 
     const context = useContext(NoteContext);
     const { deleteNote } = context;
-    const { note } = props;
+    const { note, updatenote } = props;
 
 
 
@@ -15,7 +15,7 @@ const NoteItem = (props) => {
                 <h5 className="card-title">{note.title}</h5>
                 <p className="card-text">{note.description}</p>
                 <div className="d-flex justify-content-between">
-                    <i className="fa-solid fa-pen-to-square"></i>
+                    <i className="fa-solid fa-pen-to-square" onClick={()=> updatenote(note)}></i>
                     <i className="fa-solid fa-trash" onClick={() => deleteNote(note._id)}></i>
                 </div>
             </div>
