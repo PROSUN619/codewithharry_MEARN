@@ -1,13 +1,26 @@
-import React, {useEffect} from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const Navbar = () => {
 
     let location = useLocation();
+    let navigate = useNavigate();
+    let token = localStorage.getItem('token');
 
     useEffect(() => {
         //console.log(location.pathname);
-    }, [location]);
+        if (!token){
+            navigate("/login");
+        }
+        // eslint-disable-next-line
+    }, [token]);
+
+    const handleLogout = () => {
+        localStorage.removeItem('token');
+        token = null;
+        //navigate("/signup");
+        //navigate("/signup", { replace: true });
+    }
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -25,10 +38,16 @@ const Navbar = () => {
                             <Link className={`nav-link ${(location.pathname === '/about' ? 'active' : '')}`} to="/about">About</Link>
                         </li>
                     </ul>
-                    <form className="d-flex" role="search">
-                        <Link class="btn btn-primary mx-2" to="/login" role="button">Login</Link>
-                        <Link class="btn btn-primary mx-2" to="/signup" role="button">Sign Up</Link>
-                    </form>
+                    {(!localStorage.getItem('token')) ?
+                        <form className="d-flex" role="search">
+                            <Link className="btn btn-primary mx-2"  to="/login" role="button">Login</Link>
+                            <Link className="btn btn-primary mx-2" to="/signup" role="button">Sign Up</Link>
+                        </form>
+                        :
+                        <form className="d-flex" role="search">
+                            <Link className="btn btn-primary mx-2" onClick={handleLogout} role="button">Logout</Link>
+                        </form>
+                    }
                 </div>
             </div>
         </nav>

@@ -3,6 +3,12 @@ import Notes from './Notes'
 
 function Home() {
 
+
+
+  //debugger;
+
+  
+
   return (
     <div>
       <Notes/>

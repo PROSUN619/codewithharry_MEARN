@@ -1,10 +1,16 @@
 import React, { useContext, useState } from 'react'
+import AlertContext from '../contexts/notes/AlertContext';
 import NoteContext from '../contexts/notes/NoteContext'
 
 const AddNote = () => {
 
+    
     const context = useContext(NoteContext)
     const { addNote } = context;
+    
+    const alertcontext = useContext(AlertContext)
+    const { handleAlert } = alertcontext;
+
     const [note, setNote] = useState({ title: "", description: "", tag: "" });
 
     const handleSubmit = (e) => {
@@ -12,6 +18,7 @@ const AddNote = () => {
         //debugger;
         addNote(note.title, note.description, note.tag);
         setNote({ title: "", description: "", tag: "" });
+        handleAlert('success', 'Saved successfully');
     }
 
     const handleChange = (e) => {
